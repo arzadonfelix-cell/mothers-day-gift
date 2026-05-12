@@ -1,0 +1,269 @@
+.container {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 32px 22px;
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 11vw, 4.5rem);
+  line-height: 1.05;
+  color: #c73866;
+  margin: 0 0 22px;
+  max-width: 900px;
+}
+
+.message {
+  max-width: 680px;
+  font-size: clamp(1rem, 4.5vw, 1.35rem);
+  line-height: 1.7;
+  color: #654052;
+  margin: 0 0 34px;
+}
+
+button {
+  width: min(100%, 320px);
+  padding: 16px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #d14d72, #f26b8f);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(209, 77, 114, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 18px 36px rgba(209, 77, 114, 0.35);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.letter-card {
+  width: min(100%, 800px);
+
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+
+  border-radius: 28px;
+
+  padding: 32px 24px;
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+
+  animation: fadeIn 1s ease;
+}
+
+.letter-card h2 {
+  font-size: clamp(2rem, 8vw, 3rem);
+  color: #c73866;
+  margin-bottom: 24px;
+}
+
+.letter-card p {
+  color: #5e4b56;
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.signature {
+  margin-top: 30px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #c73866;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hearts::before,
+.hearts::after {
+  content: "💖 💕 💗 💞 💓";
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.25;
+  animation: floatHearts 18s linear infinite;
+  white-space: nowrap;
+}
+
+.hearts::before {
+  left: -20%;
+  top: 20%;
+}
+
+.hearts::after {
+  left: -40%;
+  top: 70%;
+  animation-delay: 9s;
+}
+
+@keyframes floatHearts {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(140%);
+  }
+}
+
+.gallery {
+  margin-top: 42px;
+  text-align: center;
+}
+
+.gallery h3 {
+  color: #c73866;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  margin-bottom: 22px;
+}
+
+.photo-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  padding: 14px;
+  box-shadow: 0 14px 35px rgba(199, 56, 102, 0.12);
+}
+
+.photo-card img {
+  width: 100%;
+  max-height: 430px;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+.photo-card p {
+  margin: 16px 8px 6px;
+  font-size: 1rem;
+  color: #654052;
+  line-height: 1.6;
+}
+
+.gallery-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.gallery-buttons button {
+  flex: 1;
+  padding: 13px 16px;
+  font-size: 0.95rem;
+}
+
+.photo-count {
+  margin-top: 12px;
+  color: #9b5a72;
+  font-size: 0.95rem;
+}
+
+.final-button {
+  margin-top: 28px;
+}
+
+.final-message {
+  margin-top: 34px;
+  padding: 28px 22px;
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 241, 245, 0.9));
+  box-shadow: 0 16px 36px rgba(199, 56, 102, 0.12);
+  animation: fadeIn 0.9s ease;
+}
+
+.final-message h3 {
+  color: #c73866;
+  font-size: clamp(1.6rem, 7vw, 2.3rem);
+  margin-bottom: 18px;
+}
+
+.final-message p {
+  color: #5e4b56;
+  font-size: clamp(1rem, 4vw, 1.15rem);
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.made-with-love {
+  margin-top: 26px;
+  font-size: 0.95rem;
+  color: #9b5a72;
+  font-style: italic;
+}
+
+.music-button {
+  position: fixed;
+  top: 18px;
+  right: 16px;
+  z-index: 10;
+
+  width: auto;
+  padding: 10px 14px;
+
+  font-size: 0.8rem;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.78);
+  color: #c73866;
+
+  box-shadow: 0 10px 25px rgba(199, 56, 102, 0.16);
+  backdrop-filter: blur(10px);
+}
+
+.music-button:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.typewriter-text {
+  min-height: 320px;
+
+  white-space: pre-line;
+
+  color: #5e4b56;
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  line-height: 1.9;
+}
+
+.signature-fade {
+  animation: signatureAppear 1.2s ease;
+}
+
+@keyframes signatureAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
